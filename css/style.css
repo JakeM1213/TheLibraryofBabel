@@ -1,0 +1,104 @@
+body, html {
+    min-height: 100%;
+    margin: 0;
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+body { 
+    overflow: hidden; 
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; 
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    top: 50vh;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.text {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0;
+    color: white; 
+}
+
+.reversed {
+    display: block;
+    transform: scaleY(-1);
+}
+
+.tv-box {
+    width: 200px;
+    height: 150px;
+    background-color: black;
+    margin: 150vh auto 0; 
+    border: 3px solid #333; 
+    z-index: 1;
+}
+
+.tv-box + .tv-box {
+    margin-top: 100vh;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    z-index: -1;
+    background: repeat-y; 
+}
+
+body::before {
+    top: 0;
+}
+
+body::after {
+    bottom: 0;
+}
+
+.skew-bg:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+    transform: skewY(-6deg);
+    transform-origin: 100% 0;
+}
